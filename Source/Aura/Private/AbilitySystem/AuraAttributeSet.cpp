@@ -26,9 +26,9 @@ void UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	DOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, MaxMana, COND_None, REPNOTIFY_Always)
 }
 
-void UAuraAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
+void UAuraAttributeSet::PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const
 {
-	Super::PreAttributeChange(Attribute, NewValue);
+	Super::PreAttributeBaseChange(Attribute, NewValue);
 
 	if (Attribute == GetHealthAttribute())
 	{
