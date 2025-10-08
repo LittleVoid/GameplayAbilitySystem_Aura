@@ -11,12 +11,14 @@
  * Singleton containing native Gameplay Tags
  */
 
-struct FAuraGamePlayTags
+struct FAuraGameplayTags
 {
 public:
-	static const FAuraGamePlayTags& Get() { return GameplayTags;}
+	static const FAuraGameplayTags& Get() { return GameplayTags;}
 	static void InitializeNativeGameplayTags();
+
+	FGameplayTag Attributes_Secondary_Armor;
 protected:
 private:
-	static FAuraGamePlayTags GameplayTags;
+	static FAuraGameplayTags GameplayTags;
 };
