@@ -8,7 +8,6 @@ FAuraGameplayTags FAuraGameplayTags::GameplayTags;
 
 void FAuraGameplayTags::InitializeNativeGameplayTags()
 {
-#pragma region Primary Attributes
 	/*
 	 * Primary Attributes
 	 */
@@ -31,9 +30,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		FName("Attributes.Primary.Vigor"),
 		FString("Increases Health")
 		);
-#pragma endregion
 
-#pragma region Secondary Attributes
 	/*
 	 * Secondary Attributes
 	 */
@@ -87,9 +84,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		FName("Attributes.Secondary.MaxMana"),
 		FString("Maximum amount of Mana obtainable")
 		);
-#pragma endregion
 
-#pragma region Input Tags
 	/*
 	 * Input Tags
 	 */
@@ -123,8 +118,6 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		FName("InputTag.4"),
 		FString("Input Tag for 4 key")
 		);
-
-#pragma endregion
 
 	GameplayTags.Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Damage"),
@@ -184,7 +177,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	/*
 	 * Effects
 	 */
-	
+
 	GameplayTags.Effects_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Effects.HitReact"),
 		FString("Tag granted when Hit Reacting")
