@@ -100,6 +100,25 @@ int32 UAuraAbilitySystemLibrary::GetXPRewardForClassAndLevel(const UObject* Worl
 	return static_cast<int32>(XPReward);
 }
 
+TArray<FGameplayTag> UAuraAbilitySystemLibrary::CallerMagnitudeTags(TSubclassOf<UGameplayEffect> GameplayEffect)
+{
+	UGameplayEffect* GE = NewObject<UGameplayEffect>(GetTransientPackage(), GameplayEffect);
+
+	TArray<FGameplayModifierInfo> ModifierInfo = GE->Modifiers;
+
+	TArray<FGameplayTag> CallerTags;
+
+	for (FGameplayModifierInfo Info : ModifierInfo)
+	{
+		if (Info.ModifierMagnitude.GetMagnitudeCalculationType() == EGameplayEffectMagnitudeCalculation::SetByCaller)
+		{
+			CallerTags.Add(Info.ModifierMagnitude.GetSetByCallerFloat().DataTag);
+		}
+	}
+
+	return CallerTags;
+}
+
 UCharacterClassInfo* UAuraAbilitySystemLibrary::GetCharacterClassInfo(const UObject* WorldContextObject)
 {
 	AAuraGameModeBase* AuraGameMode = Cast<AAuraGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
