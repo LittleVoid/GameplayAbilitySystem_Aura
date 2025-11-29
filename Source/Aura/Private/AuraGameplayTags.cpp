@@ -222,7 +222,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		FName("Attributes.Meta.IncomingXP"),
 		FString("Incoming XP Meta Attribute")
 		);
-	
+
 	/*
 	 * Map of Damage Types to Resistances
 	 */
@@ -253,9 +253,9 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	 */
 
 	GameplayTags.Abilities_None = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Abilities.None"),
-	FString("No Ability - like the nullptr for Ability Tags")
-	);
+		FName("Abilities.None"),
+		FString("No Ability - like the nullptr for Ability Tags")
+		);
 
 	GameplayTags.Abilities_Attack = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Attack"),
@@ -307,6 +307,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 			FName("Abilities.Passive.HaloOfProtection"),
 			FString("Halo Of Protection")
 			);
+	
 
 	GameplayTags.Abilities_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.HitReact"),
@@ -351,12 +352,11 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	/*
 	* Cooldown
 	*/
-
+	
 	GameplayTags.Cooldown_Fire_FireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Cooldown.Fire.FireBolt"),
 		FString("FireBolt Cooldown Tag")
 		);
-
 
 	/*
 	 * Combat Sockets
@@ -428,5 +428,14 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Player_Block_InputReleased = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Player.Block.InputReleased"),
 		FString("Block Input Released callback for input")
+		);
+
+	/*
+	 * GameplayCues
+	 */
+
+	GameplayTags.GameplayCue_FireBlast = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("GameplayCue.FireBlast"),
+		FString("FireBlast GameplayCue Tag")
 		);
 }

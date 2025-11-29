@@ -2,6 +2,7 @@
 
 
 #include "AbilitySystem/Abilities/AuraFireBlast.h"
+
 #include "AbilitySystem/AuraAbilitySystemLibrary.h"
 #include "Actor/AuraFireBall.h"
 
@@ -93,6 +94,7 @@ TArray<AAuraFireBall*> UAuraFireBlast::SpawnFireBalls()
 		
 		FireBall->DamageEffectParams = MakeDamageEffectParamsFromClassDefaults();
 		FireBall->ReturnToActor = GetAvatarActorFromActorInfo();
+		FireBall->SetOwner(GetAvatarActorFromActorInfo());
 
 		FireBall->ExplosionDamageParams = MakeDamageEffectParamsFromClassDefaults();
 		FireBall->SetOwner(GetAvatarActorFromActorInfo());

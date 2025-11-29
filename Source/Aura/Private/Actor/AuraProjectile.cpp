@@ -39,6 +39,7 @@ void AAuraProjectile::BeginPlay()
 	SetLifeSpan(LifeSpan);
 	SetReplicateMovement(true);
 	Sphere->OnComponentBeginOverlap.AddDynamic(this, &AAuraProjectile::OnSphereOverlap);
+
 	LoopingSoundComponent = UGameplayStatics::SpawnSoundAttached(LoopingSound, GetRootComponent());
 }
 
@@ -70,7 +71,7 @@ void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, 
 {
 	if (!IsValidOverlap(OtherActor)) return;
 	if (!bHit) OnHit();
-
+	
 	if (HasAuthority())
 	{
 		if (UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(OtherActor))

@@ -7,7 +7,6 @@
 #include "AuraFireBlast.generated.h"
 
 class AAuraFireBall;
-
 /**
  * 
  */
