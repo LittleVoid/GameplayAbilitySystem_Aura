@@ -21,5 +21,14 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FSetWidgetSwitcherIndex SetWidgetSwitcherIndex;
 
-	void InittializeSlot();
+	void InitializeSlot();
+
+	UPROPERTY()
+	FString PlayerName;
+
+	UPROPERTY()
+	FString LoadSlotName;
+
+	UPROPERTY()
+	FString SlotIndex;
 };
