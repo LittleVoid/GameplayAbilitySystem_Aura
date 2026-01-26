@@ -10,18 +10,19 @@
 void UMVVM_LoadScreen::InitializeLoadSlots()
 {
 	LoadSlot_0 = NewObject<UMVVM_LoadSlot>(this, LoadSlotViewModelClass);
+	LoadSlot_0->SetLoadSlotName(FString("LoadSlot_0"));
 	LoadSlots.Add(0, LoadSlot_0);
 	LoadSlot_0->SlotIndex = 0;
-	LoadSlot_0->SetLoadSlotName(FString("LoadSlot_0"));
 	LoadSlot_1 = NewObject<UMVVM_LoadSlot>(this, LoadSlotViewModelClass);
 	LoadSlots.Add(1, LoadSlot_1);
 	LoadSlot_0->SlotIndex = 1;
 	LoadSlot_1->SetLoadSlotName(FString("LoadSlot_1"));
 	LoadSlot_2 = NewObject<UMVVM_LoadSlot>(this, LoadSlotViewModelClass);
 	LoadSlots.Add(2, LoadSlot_2);
-	LoadSlot_0->SlotIndex = 2;
 	LoadSlot_2->SetLoadSlotName(FString("LoadSlot_2"));
-	
+	LoadSlot_0->SlotIndex = 2;
+
+	SetNumLoadSlots(LoadSlots.Num());	
 }
 
 UMVVM_LoadSlot* UMVVM_LoadScreen::GetLoadSlotViewModelByIndey(int32 Index) const
@@ -99,4 +100,10 @@ void UMVVM_LoadScreen::LoadData()
 		LoadSlot.Value->InitializeSlot();
 		LoadSlot.Value->SetMapName(SaveObject->MapName);
 	}
+}
+
+void UMVVM_LoadScreen::SetNumLoadSlots(int32 InNumLoadSlots)
+{
+	UE_MVVM_SET_PROPERTY_VALUE(NumLoadSlots, InNumLoadSlots);
+	
 }
