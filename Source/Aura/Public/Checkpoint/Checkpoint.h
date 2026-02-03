@@ -25,7 +25,6 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, SaveGame)
 	bool bReached = false;
-
 protected:
 
 	UFUNCTION()
@@ -34,14 +33,15 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void CheckpointReached(UMaterialInstanceDynamic* DynamicMaterialInstance);\
+	void CheckpointReached(UMaterialInstanceDynamic* DynamicMaterialInstance);
 
 	void HandleGlowEffects();
-private:
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UStaticMeshComponent> CheckpointMesh;
-
+	
+private:
+	
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<USphereComponent> Sphere;
 };
