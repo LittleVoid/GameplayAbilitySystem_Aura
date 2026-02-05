@@ -35,10 +35,10 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
 	FVector CalculatedLocation;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
 	FRotator CalculatedRotation;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup Movement")
